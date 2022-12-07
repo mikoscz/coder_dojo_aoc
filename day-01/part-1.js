@@ -1,17 +1,10 @@
 import { readFileSync} from "node:fs";
+import { getElfCalories } from "./getElfCalories";
 
 const data = readFileSync("./day-01/input.txt", "utf-8");
 
 export function partOne(input) {
-  const sums = input
-    .split("\n\n")
-    .map(elf => {
-      return elf
-        .split("\n")
-        .filter(Boolean)
-        .map(caloriesAsString => parseInt(caloriesAsString))
-        .reduce((sum, calories) => sum + calories, 0)
-    })
+  const sums = getElfCalories(input)
 
   return Math.max(...sums)
 }
