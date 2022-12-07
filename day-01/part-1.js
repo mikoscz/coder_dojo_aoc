@@ -1,5 +1,5 @@
 import { readFileSync} from "node:fs";
-import { getElfCalories } from "./getElfCalories";
+import { getElfCalories } from "./getElfCalories.js";
 
 const data = readFileSync("./day-01/input.txt", "utf-8");
 
